@@ -30,11 +30,11 @@ class Question(models.Model):
 
 
     def __str__(self):
-        return ('설문조사 {}'.format(self.title))
+        return ('설문조사 : {}'.format(self.title))
 
 class Choice(models.Model):
     question = models.ForeignKey(Question)#Question 클래스가 여러 Choice와 연결 다대일 관계
     title= models.CharField(max_length=50)
     vote = models.IntegerField(default=0)
     def __str__(self):
-        return ('설문조사 {} - 선택지 {}'.format(self.question,self.title))
+        return ('{} - 선택지 : {}'.format(self.question,self.title))
